@@ -1,0 +1,12 @@
+a.show()
+a.setBins(4)
+a.setSmooth(.9)
+
+voronoi(() => cc[43] * 8,() => cc[42])
+  .add(noise(() => (a.fft[0]) + 2), .5)
+  .luma(() => (a.fft[0] * .7) + .2, .01)
+  .color(.7, .8, 1)
+  .colorama(() => cc[41])
+  .kaleid(2)
+  .color(() => cc[21], ()=>cc[22], ()=>cc[23])
+  .out()

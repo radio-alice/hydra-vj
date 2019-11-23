@@ -1,0 +1,13 @@
+a.show()
+a.setBins(4)
+a.setSmooth(.6)
+
+voronoi(30,.8, () => ((1 - cc[41]) * 1.8))
+  .color(.8, .8, 1)
+  .pixelate(300,300)
+  .diff(shape(12, () => (a.fft[0] * .5) + .1).mult(osc(10,() => (a.fft[0]),2)))
+  .luma(() => (1 - cc[42]) * .4, () => (a.fft[0] * .2) + .1)
+  .colorama(1)
+  .color(2,.8,.9)
+  .color(() => cc[21], ()=>cc[22], ()=>cc[23])
+  .out()
